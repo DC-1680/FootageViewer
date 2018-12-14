@@ -3,13 +3,26 @@
 	"version": "1.0.0",
 	"description": "Roller Derby Footage Tracker",
 	"main": "app.js",
+	"engines": {
+		"node": ">=8"
+	},
+	"repository": "https://github.com/DC-1680/FootageViewer",
+	"private": true,
+	"cloud-repo-tools": {
+		"requiresKeyFile": true,
+		"requiresProjectId": true
+	},
 	"scripts": {
 		"start": "node app.js",
-		"start-dev": "nodemon app.js"
+		"start-dev": "nodemon app.js",
+		"cover": "nyc --cache npm test; nyc report --reporter=html"
 	},
 	"author": "Daryl Concha",
 	"dependencies": {
 		"express": "^4.16.4",
+		"firebase": "^5.7.0",
+		"firebase-admin": "^6.3.0",
+		"firebase-functions": "^2.1.0",
 		"path": "^0.12.7",
 		"volleyball": "^1.5.1"
 	},

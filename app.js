@@ -1,9 +1,18 @@
-const express = require('express')
-const path = require('path')
-
+const express = require('express');
+const functions = require("firebase-functions");
+const path = require('path');
+var firebase = require('firebase');
+// const admin = require('firebase-admin');
 const volleyball = require('volleyball')
+// const serviceAccount = require('serviceAccountKey.json');
 
 const PORT = process.env.PORT || 8080
+
+
+// admin.initializeApp({
+// 	credential: admin.credential.cert(serviceAccount),
+// 	databaseURL: 'https://derby-footage.firebaseio.com'
+// });
 
 const app = express();
 
@@ -34,4 +43,6 @@ app.listen(PORT, () =>
 	console.log(`Mixing it up on port ${PORT}`)
 );
 
-module.exports = app;
+const api = functions.https.onRequest(app)
+
+module.exports = { api };
