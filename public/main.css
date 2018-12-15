@@ -1,0 +1,35 @@
+
+#main {
+	display: flex;
+	flex-direction: row
+}
+
+#player-wrapper {
+	margin: 1em;
+}
+
+#sidebar-wrapper {
+	width: 200px;
+	background-color: #363636
+}
+#sh-wrapper {
+	display: flex;
+	flex-direction: row;
+  }
+
+.toggle-item {
+	margin-right: 30px;
+	cursor: pointer;
+  }
+  
+  .active-toggle {
+	color: #ffc1dc;
+  }
+
+  .hidden {
+	display: none;
+}
+  
+.visible {
+	display: initial;
+}
