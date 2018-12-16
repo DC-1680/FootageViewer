@@ -1,4 +1,5 @@
 import React from 'react';
+import Jam from './Jam'
 
 const Jamlist = (props) => {
 	const { jamList } = props
@@ -6,11 +7,11 @@ const Jamlist = (props) => {
 		<div>
 			{!jamList
 				? <h1>Loading</h1>
-				: jamList.map(jam => <p key={jam.id}>Jam Number:{jam.id}, startTime: { jam.startTime }</p>
+				: jamList.map(jam => <Jam jam={jam} />
 				)
 			}
 		</div>
-				)
-			}
+	)
+}
 
-			export default Jamlist;
+export default Jamlist;

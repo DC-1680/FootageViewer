@@ -36937,7 +36937,7 @@ var Player = function (_Component) {
 				{ id: 'main' },
 				_react2.default.createElement(
 					'div',
-					null,
+					{ id: 'player-wrapper', className: 'd-flex flex-column flex-justify-center' },
 					_react2.default.createElement(
 						'style',
 						null,
@@ -37113,26 +37113,34 @@ var Sidebar = function (_Component) {
 
 			return _react2.default.createElement(
 				'div',
-				{ id: 'sidebar-wrapper' },
+				{ id: 'side-menu', className: 'd-flex flex-column ps-color-bg-gray-04' },
 				_react2.default.createElement(
-					'div',
-					{ id: 'sh-wrapper' },
+					'ul',
+					{ className: 'tabs side-menu-tab-buttons' },
 					_react2.default.createElement(
-						'h1',
-						{ onClick: function onClick() {
-								return _this2.setState({ displayJL: true });
-							},
-							className: !this.state.displayJL ? 'example_c shbox toggle-item' : 'example_c shbox toggle-item active-toggle'
-						},
-						'Jam List'
+						'li',
+						{ id: 'button-jam-list-wrapper',
+							className: this.state.displayJL ? "selected" : "null" },
+						_react2.default.createElement(
+							'button',
+							{ id: 'button-jam-list', className: 'side-menu-tab-button',
+								onClick: function onClick() {
+									return _this2.setState({ displayJL: true });
+								} },
+							'Jam List'
+						)
 					),
 					_react2.default.createElement(
-						'h1',
-						{ onClick: function onClick() {
-								return _this2.setState({ displayJL: false });
-							},
-							className: this.state.displayJL ? 'example_c shbox toggle-item' : 'example_c shbox toggle-item active-toggle' },
-						'Notes'
+						'li',
+						{ id: 'button-notes-wrapper', className: !this.state.displayJL ? "selected" : "null" },
+						_react2.default.createElement(
+							'button',
+							{ id: 'button-notes', className: 'side-menu-tab-button',
+								onClick: function onClick() {
+									return _this2.setState({ displayJL: false });
+								} },
+							'Notes'
+						)
 					)
 				),
 				_react2.default.createElement(
@@ -37164,6 +37172,10 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Jam = __webpack_require__(375);
+
+var _Jam2 = _interopRequireDefault(_Jam);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Jamlist = function Jamlist(props) {
@@ -37177,14 +37189,7 @@ var Jamlist = function Jamlist(props) {
 			null,
 			'Loading'
 		) : jamList.map(function (jam) {
-			return _react2.default.createElement(
-				'p',
-				{ key: jam.id },
-				'Jam Number:',
-				jam.id,
-				', startTime: ',
-				jam.startTime
-			);
+			return _react2.default.createElement(_Jam2.default, { jam: jam });
 		})
 	);
 };
@@ -37255,6 +37260,14 @@ var Notes = function Notes(props) {
 };
 
 exports.default = Notes;
+
+/***/ }),
+/* 374 */,
+/* 375 */
+/***/ (function(module, exports) {
+
+"use strict";
+throw new Error("Module build failed: SyntaxError: Unexpected token (4:9)\n\n\u001b[0m \u001b[90m 2 | \u001b[39m\n \u001b[90m 3 | \u001b[39m\u001b[36mconst\u001b[39m \u001b[33mJam\u001b[39m \u001b[33m=\u001b[39m (props) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 | \u001b[39m\t{ jam } \u001b[33m=\u001b[39m props\n \u001b[90m   | \u001b[39m\t        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 5 | \u001b[39m\t\u001b[36mreturn\u001b[39m (\n \u001b[90m 6 | \u001b[39m\t\t\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 7 | \u001b[39m\u001b[0m\n");
 
 /***/ })
 /******/ ]);

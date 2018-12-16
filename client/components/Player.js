@@ -34,7 +34,7 @@ class Player extends Component {
 		const style = `.max-width-1024 { max-width: 1024px; margin: 0 auto; }`;
 		return (
 			<div id='main'>
-				<div>
+				<div id='player-wrapper' className='d-flex flex-column flex-justify-center'>
 					<style>{style}</style>
 					<div className="max-width-1024">
 						<div className="embed-responsive embed-responsive-16by9" id="player">

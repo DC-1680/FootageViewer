@@ -19,30 +19,22 @@ class Sidebar extends Component {
 
 	render() {
 		return (
-			<div id='sidebar-wrapper'>
-				<div id='sh-wrapper'>
-					{/* <div className=""> */}
-					<h1 onClick={() => this.setState({ displayJL: true })}
-						className={
-							!this.state.displayJL
-								? 'example_c shbox toggle-item'
-								: 'example_c shbox toggle-item active-toggle'
-						}
-					>
-						Jam List
-						</h1>
-					{/* </div> */}
-					{/* <div className="btn btn-1"> */}
-					<h1 onClick={() => this.setState({ displayJL: false })}
-						className={
-							this.state.displayJL
-								? 'example_c shbox toggle-item'
-								: 'example_c shbox toggle-item active-toggle'
-						}>
-						Notes
-						</h1>
-					{/* </div> */}
-				</div>
+			<div id='side-menu' className="d-flex flex-column ps-color-bg-gray-04">
+				<ul className="tabs side-menu-tab-buttons">
+					<li id="button-jam-list-wrapper"
+						className={(this.state.displayJL) ? "selected" : "null"}>
+						<button id="button-jam-list" className="side-menu-tab-button"
+							onClick={() => this.setState({ displayJL: true })}>
+							Jam List
+						</button>
+					</li>
+					<li id="button-notes-wrapper" className={!this.state.displayJL ? "selected" : "null"}>
+						<button id="button-notes" className="side-menu-tab-button"
+							onClick={() => this.setState({ displayJL: false })}>
+							Notes
+						</button>
+					</li>
+				</ul>
 				<div>
 					{!this.state.displayJL
 						? <Notes notes={this.state.notes} />
