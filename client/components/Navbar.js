@@ -3,9 +3,9 @@ import React from 'react';
 const Navbar = () => {
 	return (
 
-	<div>
-		<h1>Header</h1>
-	</div>
+		<div>
+			{/* <h1>Header</h1> */}
+		</div>
 	)
 }
 

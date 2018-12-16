@@ -9,3 +9,7 @@ www.darylconcha.com
 
 ## Instructions
 *In progress*
+
+
+## Attributes
+Whistle icon made by Zlatko Najdenovski from www.flaticon.com 

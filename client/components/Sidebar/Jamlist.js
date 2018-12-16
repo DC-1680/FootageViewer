@@ -6,11 +6,11 @@ const Jamlist = (props) => {
 		<div>
 			{!jamList
 				? <h1>Loading</h1>
-				: jamList.map(jam => <p key={jam.id}>{jam.name}: {jam.duration}</p>
+				: jamList.map(jam => <p key={jam.id}>Jam Number:{jam.id}, startTime: { jam.startTime }</p>
 				)
 			}
 		</div>
-	)
-}
+				)
+			}
 
-export default Jamlist;
+			export default Jamlist;

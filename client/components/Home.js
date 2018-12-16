@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Player from './Player';
 import Sidebar from './Sidebar/Sidebar';
 
 
-export const Home = () => {
+const Home = () => {
 	return (
-		<div id='main'>
+		<div id='home'>
 			<Player />
-			<Sidebar />
+			{/* <Sidebar /> */}
 		</div>
 	)
 }
