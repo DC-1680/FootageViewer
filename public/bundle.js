@@ -36960,7 +36960,7 @@ var Player = function (_Component) {
 							_react2.default.createElement(
 								'a',
 								{ className: 'example_c', target: '_blank', rel: 'nofollow noopener' },
-								_react2.default.createElement('img', { src: './referee.png' }),
+								_react2.default.createElement('img', { src: './icons/referee.png' }),
 								'Mark Jam ',
 								this.state.jamNumber
 							)
@@ -37100,7 +37100,7 @@ var Sidebar = function (_Component) {
 
 		_this.state = {
 			displayJL: true,
-			// jamList: [{ 'id': 1, 'name': "Jam 1", 'duration': '2:00' }, { 'id': 2, 'name': "Jam 2", 'duration': '2:00' }, { 'id': 3, 'name': "Jam 3", 'duration': '2:00' }],
+			jamList: [{ 'id': 1, 'name': "Jam 1", 'duration': '2:00' }, { 'id': 2, 'name': "Jam 2", 'duration': '2:00' }, { 'id': 3, 'name': "Jam 3", 'duration': '2:00' }],
 			notes: [{ 'id': 1, 'title': "Note 1", 'text': 'Jammer gets out on turn 1' }, { 'id': 2, 'title': "Note 2", 'text': 'Blocker 1 knocks jammer out on inside line' }, { 'id': 3, 'title': "Note 3", 'text': 'Blocker 3 catches blocker chest to chest' }]
 		};
 		return _this;
@@ -37146,7 +37146,7 @@ var Sidebar = function (_Component) {
 				_react2.default.createElement(
 					'div',
 					null,
-					!this.state.displayJL ? _react2.default.createElement(_Notes2.default, { notes: this.state.notes }) : _react2.default.createElement(_Jamlist2.default, { jamList: this.props.jamList })
+					!this.state.displayJL ? _react2.default.createElement(_Notes2.default, { notes: this.state.notes }) : _react2.default.createElement(_Jamlist2.default, { jamList: this.state.jamList })
 				)
 			);
 		}
@@ -37189,7 +37189,7 @@ var Jamlist = function Jamlist(props) {
 			null,
 			'Loading'
 		) : jamList.map(function (jam) {
-			return _react2.default.createElement(_Jam2.default, { jam: jam });
+			return _react2.default.createElement(_Jam2.default, { key: jam.id, jam: jam });
 		})
 	);
 };
@@ -37235,6 +37235,10 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Note = __webpack_require__(376);
+
+var _Note2 = _interopRequireDefault(_Note);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Notes = function Notes(props) {
@@ -37242,20 +37246,23 @@ var Notes = function Notes(props) {
 
 	return _react2.default.createElement(
 		'div',
-		null,
-		!notes ? _react2.default.createElement(
-			'h1',
-			null,
-			'Loading'
-		) : notes.map(function (jam) {
-			return _react2.default.createElement(
-				'p',
-				{ key: jam.id },
-				jam.title,
-				': ',
-				jam.text
-			);
-		})
+		{ id: 'noteslist', className: 'd-flex flex-column flex-align-center' },
+		_react2.default.createElement(
+			'div',
+			{ className: 'flex-grow-1' },
+			!notes ? _react2.default.createElement(
+				'h1',
+				null,
+				'Loading'
+			) : notes.map(function (note) {
+				return _react2.default.createElement(_Note2.default, { key: note.id, note: note });
+			})
+		),
+		_react2.default.createElement(
+			'div',
+			{ id: 'note-entry-box' },
+			_react2.default.createElement('input', null)
+		)
 	);
 };
 
@@ -37264,10 +37271,95 @@ exports.default = Notes;
 /***/ }),
 /* 374 */,
 /* 375 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token (4:9)\n\n\u001b[0m \u001b[90m 2 | \u001b[39m\n \u001b[90m 3 | \u001b[39m\u001b[36mconst\u001b[39m \u001b[33mJam\u001b[39m \u001b[33m=\u001b[39m (props) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 | \u001b[39m\t{ jam } \u001b[33m=\u001b[39m props\n \u001b[90m   | \u001b[39m\t        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 5 | \u001b[39m\t\u001b[36mreturn\u001b[39m (\n \u001b[90m 6 | \u001b[39m\t\t\u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 7 | \u001b[39m\u001b[0m\n");
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Jam = function Jam(props) {
+	var jam = props.jam;
+
+	return _react2.default.createElement(
+		'div',
+		{ className: 'tabs' },
+		_react2.default.createElement(
+			'p',
+			null,
+			jam.id
+		),
+		_react2.default.createElement(
+			'p',
+			null,
+			_react2.default.createElement('img', { src: './icons/play.png' })
+		)
+	);
+};
+
+exports.default = Jam;
+
+/***/ }),
+/* 376 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Note = function Note(props) {
+	var note = props.note;
+
+	return _react2.default.createElement(
+		'div',
+		{ className: 'tabs' },
+		_react2.default.createElement(
+			'p',
+			null,
+			note.title
+		),
+		_react2.default.createElement(
+			'div',
+			{ 'class': 'd-flex' },
+			_react2.default.createElement(
+				'p',
+				null,
+				_react2.default.createElement('img', { src: './icons/play.png' })
+			),
+			_react2.default.createElement(
+				'p',
+				null,
+				_react2.default.createElement('img', { src: './icons/delete.png' }),
+				'Delete'
+			),
+			_react2.default.createElement(
+				'p',
+				null,
+				_react2.default.createElement('img', { src: './icons/edit.png' }),
+				'Edit'
+			)
+		)
+	);
+};
+
+exports.default = Note;
 
 /***/ })
 /******/ ]);

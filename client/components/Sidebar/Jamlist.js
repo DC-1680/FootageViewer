@@ -7,7 +7,7 @@ const Jamlist = (props) => {
 		<div>
 			{!jamList
 				? <h1>Loading</h1>
-				: jamList.map(jam => <Jam jam={jam} />
+				: jamList.map(jam => <Jam key={jam.id} jam={jam} />
 				)
 			}
 		</div>

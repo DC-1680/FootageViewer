@@ -3,14 +3,14 @@ body {
 	color: #FF3E20;
 	font-family: 'Lato', sans-serif;
 	margin: 0;
-	font-size: 16px;
+	/* font-size: 20px; */
 	line-height: 1.15;
 }
 
 #main {
 	display: grid;
 	grid-template-columns: [col1-start] 2fr [col1-end col2-start] 1fr [col2-end];
-  	background-color: #181818
+  	background-color: #08203C
 }
 
 #player-wrapper {
@@ -36,13 +36,22 @@ body {
     flex-direction: column !important;
 }
 
+.flex-align-center {
+	align-content: center;
+}
+
 .flex-justify-center {
 	justify-content: center
 }
 
-.ps-color-bg-gray-04 {
-    background-color: #363636;
+.flex-grow-1 {
+	flex-grow: 1;
 }
+.ps-color-bg-gray-04 {
+	background-color: #093E60;
+	background-image: linear-gradient(to bottom right, #093E60,  #007AAD);
+}
+
 
 ul, menu, dir {
     display: block;
@@ -61,20 +70,22 @@ li {
 
 
 .tabs {
-    padding: 0 0 4rem 1.5rem;
-    /* height: 1rem; */
+    padding: 0 0 1rem 1.5rem;
+    height: 3rem;
     letter-spacing: -.05em;
     text-rendering: optimizeLegibility;
     word-wrap: normal;
-    font-size: .875rem;
+	/* font-size: .875rem; */
+	font-size: inherit;
     line-height: 1.5rem;
     letter-spacing: 0;
     margin: 0;
     max-width: 100%;
-    border-bottom: 1px solid #181818;
+    border-bottom: 1px solid #08203C;
     list-style-type: none;
 	margin-bottom: 0;
 }
+
 .tabs li {
     float: left;
     margin: 0;
@@ -82,11 +93,11 @@ li {
 }
 
 .tabs li.selected {
-    border-bottom: 4px solid #f96816;
+    border-bottom: 4px solid #F4ACBA;
 }
 
 .tabs li button {
-    color: #aaa;
+    color: #BFDFF4;
     display: block;
     padding: 1.25rem 0 1rem;
     text-decoration: none;
@@ -95,6 +106,10 @@ li {
 	cursor: pointer;
 	font-family: inherit;
 	font: 400 11px 
+}
+
+button {
+	font-size: 100%
 }
 .side-menu-tab-button:focus {
     outline: none;
@@ -112,8 +127,15 @@ li {
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
 }
-  
 
+#noteslist {
+	max-height: calc(100% - 3rem);
+	
+}
+
+.notes-list {
+	overflow-y: auto;
+}
 .hidden {
 	display: none;
 }
@@ -152,9 +174,9 @@ li {
 
 .example_c:hover {
 	color: #ffffff !important;
-		background: #007AAD;
-		border-color: #007AAD !important;
-		transition: all 0.4s ease 0s;
-		box-shadow: 0 4px #006d9b;
-		top: 2px;
-		}
+	background: #007AAD;
+	border-color: #007AAD !important;
+	transition: all 0.4s ease 0s;
+	box-shadow: 0 4px #006d9b;
+	top: 2px;
+}

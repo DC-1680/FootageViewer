@@ -7,7 +7,7 @@ class Sidebar extends Component {
 		super(props)
 		this.state = {
 			displayJL: true,
-			// jamList: [{ 'id': 1, 'name': "Jam 1", 'duration': '2:00' }, { 'id': 2, 'name': "Jam 2", 'duration': '2:00' }, { 'id': 3, 'name': "Jam 3", 'duration': '2:00' }],
+			jamList: [{ 'id': 1, 'name': "Jam 1", 'duration': '2:00' }, { 'id': 2, 'name': "Jam 2", 'duration': '2:00' }, { 'id': 3, 'name': "Jam 3", 'duration': '2:00' }],
 			notes: [
 				{ 'id': 1, 'title': "Note 1", 'text': 'Jammer gets out on turn 1' },
 				{ 'id': 2, 'title': "Note 2", 'text': 'Blocker 1 knocks jammer out on inside line' },
@@ -38,7 +38,7 @@ class Sidebar extends Component {
 				<div>
 					{!this.state.displayJL
 						? <Notes notes={this.state.notes} />
-						: <Jamlist jamList={this.props.jamList} />
+						: <Jamlist jamList={this.state.jamList} />
 					}
 				</div>
 			</div>

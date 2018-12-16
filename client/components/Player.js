@@ -44,7 +44,7 @@ class Player extends Component {
 						<div className="button_cont" align="center"
 							onClick={() => this.startJamClick()}>
 							<a className="example_c" target="_blank" rel="nofollow noopener">
-								<img src="./referee.png" />Mark Jam {this.state.jamNumber}
+								<img src="./icons/referee.png" />Mark Jam {this.state.jamNumber}
 							</a>
 						</div>
 					</div>
